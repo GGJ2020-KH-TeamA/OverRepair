@@ -29,7 +29,8 @@ public class Main : MonoBehaviour
     public AudioManager audioManager;
     public GameObject joystick;
     public Timer timer;
-    public bool isTouch;
+    private bool isTouch = false;
+    private bool isMouseButtonDown = false;
 
     public float roundClearTimer = 0f;
 
@@ -88,22 +89,7 @@ public class Main : MonoBehaviour
                 }
             case GameState.Gaming:
                 {
-                    if (Input.touchCount > 0)
-                    {
-                        if (!isTouch)
-                        {
-                            joystick.SetActive(true);
-                            joystick.transform.position = Input.GetTouch(0).position;
-                            isTouch = true;
-                            joystick.GetComponent<Joystick>().isDragging = true;
-                        }
-                    }
-                    if (Input.touchCount == 0)
-                    {
-                        joystick.GetComponent<Joystick>().isDragging = false;
-                        joystick.SetActive(false);
-                        isTouch = false;
-                    }
+                    JoystickControl();
                     GamingLogic();
                     break;
                 }
@@ -145,6 +131,26 @@ public class Main : MonoBehaviour
                 }
             default:
                 break;
+        }
+    }
+
+    private void JoystickControl()
+    {
+        if (Input.touchCount > 0)
+        {
+            if (!isTouch)
+            {
+                joystick.SetActive(true);
+                joystick.transform.position = Input.GetTouch(0).position;
+                isTouch = true;
+                joystick.GetComponent<Joystick>().isDragging = true;
+            }
+        }
+        if (Input.touchCount == 0)
+        {
+            joystick.GetComponent<Joystick>().isDragging = false;
+            joystick.SetActive(false);
+            isTouch = false;
         }
     }
 
