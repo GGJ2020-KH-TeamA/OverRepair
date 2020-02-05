@@ -10,33 +10,28 @@ public class PlayerControl : MonoBehaviour
     public ItemManager itemManager;
     public PlayerSpriteController playerSpriteController;
     private GameObject RobotDown;
-    public Main _Main;
+    public Main main;
     public Joystick joystick;
+    public Data data;
     public GameObject BlindEffect;
 
     public bool[] MyStates;
 
-    private float MaxSpeed = 3f;
-    public float Speed;
-    public int ItemID;
+    private float MaxSpeed = 1f;
+    private float Speed;
+    private int ItemID;
     public int Item1 = 8;
     public int Item2 = 8;
     public bool isBlind = false;
-    public int HandCount = 0;
+    private int HandCount = 0;
     public bool isMoving { get; private set; }
     public Vector2 direction { get; private set; }
     public bool isPlaying = true;
     private int BreakProbability;
-
-    private Rigidbody2D rigidbody;
-
-    public delegate void PlayerDelegate();
-    public static PlayerDelegate GameOverEvent;
-
+    
     void Awake()
     {
         Instance = this;
-        rigidbody = GetComponent<Rigidbody2D>();
         MyStates = new bool[] { true, true, true, true, true, true };
     }
 
@@ -44,14 +39,14 @@ public class PlayerControl : MonoBehaviour
     {
         Item1 = 8;
         Item2 = 8; 
-        MaxSpeed = 1f;
+        MaxSpeed = data.PlayerInitSpeed;
         HandCount = 0;
 
         isBlind = !parts[0];
         if (parts[1]) HandCount++;
         if (parts[2]) HandCount++;
-        if (parts[3]) MaxSpeed += 1f;
-        if (parts[4]) MaxSpeed += 1f;
+        if (parts[3]) MaxSpeed += data.PlayerFootSpeed;
+        if (parts[4]) MaxSpeed += data.PlayerFootSpeed;
         if (!parts[5]) isPlaying = false;
 
         playerSpriteController.SetPart(parts);
@@ -61,13 +56,17 @@ public class PlayerControl : MonoBehaviour
 
     public void CheckBlind()
     {
-        if(isBlind) BlindEffect.SetActive(true);
+        if (isBlind)
+        {
+            BlindEffect.SetActive(true);
+            BlindEffect.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, data.PlayerBlindLevel);
+        }
         else BlindEffect.SetActive(false);
     }
 
     public bool[] Remain()
     {
-        BreakProbability = 10 * _Main.gameRound;
+        BreakProbability = Mathf.Clamp(data.PlayerBreakConstant * main.gameRound, 0, data.PlayerMaxBreakProbability);
         for(int i = 0; i < MyStates.Length; i++)
         {
             if (MyStates[i] && Random.Range(0, 100) < BreakProbability) MyStates[i] = false;
@@ -106,7 +105,7 @@ public class PlayerControl : MonoBehaviour
                 isMoving = false;
                 audioManager.Pause("walk");
             }
-            rigidbody.velocity = Vector2.zero;
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
         else
         {
@@ -115,7 +114,7 @@ public class PlayerControl : MonoBehaviour
                 isMoving = true;
                 audioManager.Play("walk", true);
             }
-            rigidbody.velocity = movement.normalized * Speed;
+            GetComponent<Rigidbody2D>().velocity = movement.normalized * Speed;
         }
         direction = movement;
     }

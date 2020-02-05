@@ -992,6 +992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811b5989c504d491a9051bfc2bca80d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
   itemPrefab: {fileID: 2070737558}
   probabilitys:
   - name: "\u982D\u90E8\u96F6\u4EF6"
@@ -2596,7 +2597,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 403959647}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1098817364}
+        m_MethodName: EasyMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &403959647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4729,7 +4741,6 @@ MonoBehaviour:
   RobotDownInitStates: 
   ConveyorSpeed: 0
   ItemSpanSpace: 0
-  NeedItemIncrease: 0
   MaxBatteryTime: 0
 --- !u!1 &716510822
 GameObject:
@@ -5220,6 +5231,7 @@ MonoBehaviour:
   converyorMover: {fileID: 440033444}
   audioManager: {fileID: 555299189}
   joystick: {fileID: 1865622907}
+  data: {fileID: 0}
   timer: {fileID: 1256515026}
   roundClearTimer: 0
 --- !u!4 &850159980
@@ -7679,6 +7691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811b5989c504d491a9051bfc2bca80d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
   itemPrefab: {fileID: 261514027}
   probabilitys:
   - name: "\u982D\u90E8\u96F6\u4EF6"
@@ -7807,6 +7820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Maxtime: 30
   TimeLeft: 0
+  data: {fileID: 0}
   active: 0
 --- !u!1 &1285009066
 GameObject:
@@ -7996,16 +8010,14 @@ MonoBehaviour:
   audioManager: {fileID: 555299189}
   itemManager: {fileID: 1230575634}
   playerSpriteController: {fileID: 546218468}
-  _Main: {fileID: 850159979}
+  main: {fileID: 0}
   joystick: {fileID: 1865622911}
+  data: {fileID: 0}
   BlindEffect: {fileID: 273496751}
   MyStates: 
-  Speed: 0
-  ItemID: 0
   Item1: 8
   Item2: 8
   isBlind: 0
-  HandCount: 0
   isPlaying: 1
 --- !u!4 &1307156840
 Transform:
@@ -8445,7 +8457,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1377441838}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1098817364}
+        m_MethodName: HardMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1377441838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10436,7 +10459,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1876469707}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1098817364}
+        m_MethodName: NormalMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1876469707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12062,6 +12096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811b5989c504d491a9051bfc2bca80d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
   itemPrefab: {fileID: 1168897436}
   probabilitys:
   - name: "\u982D\u90E8\u96F6\u4EF6"

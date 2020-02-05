@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
 
         data.ConveyorSpeed = 1f;
         data.ItemSpanSpace = 2f;
-        data.NeedItemIncrease = 50;
+        //data.NeedItemIncrease = 50;
 
         data.MaxBatteryTime = 40;
     }
@@ -37,7 +37,7 @@ public class UIManager : MonoBehaviour
 
         data.ConveyorSpeed = 1f;
         data.ItemSpanSpace = 2f;
-        data.NeedItemIncrease = 50;
+        //data.NeedItemIncrease = 50;
 
         data.MaxBatteryTime = 40;
     }
@@ -55,7 +55,7 @@ public class UIManager : MonoBehaviour
 
         data.ConveyorSpeed = 1f;
         data.ItemSpanSpace = 2f;
-        data.NeedItemIncrease = 50;
+        //data.NeedItemIncrease = 50;
 
         data.MaxBatteryTime = 40;
     }

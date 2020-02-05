@@ -18,7 +18,7 @@ public class Data : MonoBehaviour
     //Item
     public float ConveyorSpeed;
     public float ItemSpanSpace;
-    public float NeedItemIncrease;
+    //public float NeedItemIncrease;
 
     //Timer
     public int MaxBatteryTime;

@@ -28,6 +28,7 @@ public class Main : MonoBehaviour
     public ConveryorMover converyorMover;
     public AudioManager audioManager;
     public GameObject joystick;
+    public Data data;
     public Timer timer;
     private bool isTouch = false;
     private bool isMouseButtonDown = false;
@@ -70,11 +71,11 @@ public class Main : MonoBehaviour
                         timer.Reset();
 
                         playerControl.isPlaying = false;
-                        playerControl.Init(new bool[] { true, true, true, true, true, true });
+                        playerControl.Init(data.PlayerInitStates);
                         robotDown.transform.position = new Vector2(0, 0);
                         playerControl.transform.position = defaultPlayerPosition;
 
-                        robotDown.Init(new bool[] { true, true, true, true, true, false });
+                        robotDown.Init(data.RobotDownInitStates);
 
                         gotoPlay = true;
                         CameraEffect.Instance.onposfinish = ReadyToGame;
@@ -184,7 +185,7 @@ public class Main : MonoBehaviour
         timer.Reset();
         itemManager.enableSpawn = true;
 
-        converyorMover.speed = 2;
+        converyorMover.speed = data.ConveyorSpeed;
 
         Debug.Log(gameRound + " Round");
 
@@ -244,7 +245,7 @@ public class Main : MonoBehaviour
         timer.Reset();
         timer.StartTimer();
 
-        converyorMover.speed = 2;
+        converyorMover.speed = data.ConveyorSpeed;
 
         Debug.Log("First Round");
         gotoPlay = false;

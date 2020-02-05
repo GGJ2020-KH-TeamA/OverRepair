@@ -5,13 +5,20 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public float Maxtime = 20f;
+    public float Maxtime = 30f;
     public float TimeLeft;
+    public Data data;
 
     public bool active = false;
-    
+
+    public void Start()
+    {
+        Maxtime = data.MaxBatteryTime;
+    }
+
     public void Reset()
     {
+        Maxtime = data.MaxBatteryTime;
         TimeLeft = Maxtime;
     }
 

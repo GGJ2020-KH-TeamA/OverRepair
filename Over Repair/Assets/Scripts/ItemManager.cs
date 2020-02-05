@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
+    public Data data;
+
     [System.Serializable]
     public struct Probability
     {
@@ -29,6 +31,7 @@ public class ItemManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        itemSpanSpace = data.ItemSpanSpace;
     }
 
     // Start is called before the first frame update
@@ -79,7 +82,6 @@ public class ItemManager : MonoBehaviour
         {
             RemoveItem(removeItems[i]);
         }
-
     }
 
     GameObject CreateItem()
