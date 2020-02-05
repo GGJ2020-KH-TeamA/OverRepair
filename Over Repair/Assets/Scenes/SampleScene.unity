@@ -992,7 +992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811b5989c504d491a9051bfc2bca80d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  data: {fileID: 356412679}
   itemPrefab: {fileID: 2070737558}
   probabilitys:
   - name: "\u982D\u90E8\u96F6\u4EF6"
@@ -2348,6 +2348,59 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &356412678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 356412680}
+  - component: {fileID: 356412679}
+  m_Layer: 0
+  m_Name: Data
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &356412679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356412678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fde5343672803043ab579c4f63ad60f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerInitStates: 010101010101
+  PlayerInitSpeed: 2
+  PlayerFootSpeed: 1
+  PlayerBlindLevel: 120
+  PlayerBreakConstant: 3
+  PlayerMaxBreakProbability: 50
+  RobotDownInitStates: 010101010100
+  ConveyorSpeed: 1
+  ItemSpanSpace: 2
+  MaxBatteryTime: 40
+--- !u!4 &356412680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356412678}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 784.55664, y: 470.48492, z: -380.34552}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &362058354
 GameObject:
   m_ObjectHideFlags: 0
@@ -5231,7 +5284,7 @@ MonoBehaviour:
   converyorMover: {fileID: 440033444}
   audioManager: {fileID: 555299189}
   joystick: {fileID: 1865622907}
-  data: {fileID: 0}
+  data: {fileID: 356412679}
   timer: {fileID: 1256515026}
   roundClearTimer: 0
 --- !u!4 &850159980
@@ -7691,7 +7744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811b5989c504d491a9051bfc2bca80d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  data: {fileID: 356412679}
   itemPrefab: {fileID: 261514027}
   probabilitys:
   - name: "\u982D\u90E8\u96F6\u4EF6"
@@ -7820,7 +7873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Maxtime: 30
   TimeLeft: 0
-  data: {fileID: 0}
+  data: {fileID: 356412679}
   active: 0
 --- !u!1 &1285009066
 GameObject:
@@ -8010,9 +8063,9 @@ MonoBehaviour:
   audioManager: {fileID: 555299189}
   itemManager: {fileID: 1230575634}
   playerSpriteController: {fileID: 546218468}
-  main: {fileID: 0}
+  main: {fileID: 850159979}
   joystick: {fileID: 1865622911}
-  data: {fileID: 0}
+  data: {fileID: 356412679}
   BlindEffect: {fileID: 273496751}
   MyStates: 
   Item1: 8
@@ -12096,7 +12149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811b5989c504d491a9051bfc2bca80d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  data: {fileID: 356412679}
   itemPrefab: {fileID: 1168897436}
   probabilitys:
   - name: "\u982D\u90E8\u96F6\u4EF6"

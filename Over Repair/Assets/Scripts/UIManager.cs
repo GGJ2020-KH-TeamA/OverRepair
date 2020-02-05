@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
         //data.NeedItemIncrease = 50;
 
         data.MaxBatteryTime = 40;
+        gameObject.SetActive(false);
     }
 
     public void NormalMode()
@@ -40,6 +41,7 @@ public class UIManager : MonoBehaviour
         //data.NeedItemIncrease = 50;
 
         data.MaxBatteryTime = 40;
+        gameObject.SetActive(false);
     }
 
     public void HardMode()
@@ -58,5 +60,6 @@ public class UIManager : MonoBehaviour
         //data.NeedItemIncrease = 50;
 
         data.MaxBatteryTime = 40;
+        gameObject.SetActive(false);
     }
 }
