@@ -7,6 +7,7 @@ public class Main : MonoBehaviour
 {
     public static int active = 0;
     private bool gotoPlay = false;
+    public bool SelectedDifficulty;
 
     public GameState gameState = GameState.Init;
     public enum GameState
@@ -61,7 +62,7 @@ public class Main : MonoBehaviour
         {
             case GameState.Title:
                 {
-                    if (Input.anyKey && !gotoPlay)
+                    if (Input.anyKey && !gotoPlay && SelectedDifficulty)
                     {
                         itemManager.enableSpawn = false;
                         itemManager.RemoveAll();
@@ -168,7 +169,7 @@ public class Main : MonoBehaviour
 
         Vector3 tmpPosition = playerControl.transform.position;
         tmpPosition.x = Mathf.Clamp(tmpPosition.x, -2.27f, 2.13f);
-        tmpPosition.y = Mathf.Clamp(tmpPosition.y, -1.55f, -1.56f);
+        tmpPosition.y = Mathf.Clamp(tmpPosition.y, -1.55f, 1.56f);
         playerControl.transform.position = tmpPosition;
 
         tmpPosition = robotDown.transform.position;

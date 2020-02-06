@@ -5,6 +5,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public Data data;
+    public Main main;
 
     public void EasyMode()
     {
@@ -23,6 +24,8 @@ public class UIManager : MonoBehaviour
 
         data.MaxBatteryTime = 40;
         gameObject.SetActive(false);
+
+        main.SelectedDifficulty = true;
     }
 
     public void NormalMode()
@@ -42,6 +45,8 @@ public class UIManager : MonoBehaviour
 
         data.MaxBatteryTime = 40;
         gameObject.SetActive(false);
+
+        main.SelectedDifficulty = true;
     }
 
     public void HardMode()
@@ -61,5 +66,7 @@ public class UIManager : MonoBehaviour
 
         data.MaxBatteryTime = 40;
         gameObject.SetActive(false);
+
+        main.SelectedDifficulty = true;
     }
 }
