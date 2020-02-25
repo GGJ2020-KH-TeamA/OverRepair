@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraEffect : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class CameraEffect : MonoBehaviour
     public System.Action oncolorfinish;
     private Color from;
     private Color to;
+
+    public Text RoundText;
+    public Main main;
 
     private float timer;
     private float duration;
@@ -34,14 +38,7 @@ public class CameraEffect : MonoBehaviour
 
         Instance = this;
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (timer < totaltimer)
@@ -51,11 +48,14 @@ public class CameraEffect : MonoBehaviour
             {
                 float progress = Mathf.Clamp01((timer + duration - totaltimer) / duration);
                 fadeSprite.color = Color.Lerp(from, to, progress);
+                RoundText.color = Color.Lerp(Color.white, Color.clear, progress);
             }
             else
             {
                 float progress = Mathf.Clamp01(timer / duration);
                 fadeSprite.color = Color.Lerp(from, to, progress);
+                RoundText.text = "Round " + (main.gameRound + 1);
+                RoundText.color = Color.Lerp(Color.clear, Color.white, progress);
             }
             
             if (timer >= totaltimer)

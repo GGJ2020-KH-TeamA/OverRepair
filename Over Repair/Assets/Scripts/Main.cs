@@ -8,6 +8,7 @@ public class Main : MonoBehaviour
     public static int active = 0;
     private bool gotoPlay = false;
     public bool SelectedDifficulty;
+    private bool isTouch = false;
 
     public GameState gameState = GameState.Init;
     public enum GameState
@@ -31,12 +32,9 @@ public class Main : MonoBehaviour
     public GameObject joystick;
     public Data data;
     public Timer timer;
-    private bool isTouch = false;
-    private bool isMouseButtonDown = false;
-
+    
     public float roundClearTimer = 0f;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         playerControl.isPlaying = false;
@@ -54,8 +52,7 @@ public class Main : MonoBehaviour
     {
         gameState = GameState.Title;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         switch (gameState)
